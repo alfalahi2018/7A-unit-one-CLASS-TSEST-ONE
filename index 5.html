@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Short Test 1 (C) - Grade 7</title>
+<style>
+@page{size:A4;margin:12mm}
+*{box-sizing:border-box}
+body{font-family:"Times New Roman",Times,serif;color:#000;max-width:820px;margin:0 auto;padding:16px;line-height:1.4;background:#fff}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.hdr .t{text-align:center;flex:1}
+.hdr h2,.hdr h3{margin:3px 0}
+.hdr p{margin:2px 0;font-style:italic;font-size:13px}
+.sc{width:80px;border:2px solid #000;text-align:center;font-weight:bold}
+.sc div{height:34px;line-height:34px;font-size:22px}
+.sc div:first-child{border-bottom:2px solid #000}
+.bar{display:flex;border:1.5px solid #000;margin:14px 0;font-weight:bold}
+.bar span{padding:8px 10px}
+.bar .n{flex:1;border-left:1.5px solid #000;border-right:1.5px solid #000}
+.sec{display:flex;justify-content:space-between;font-weight:bold;margin-top:12px}
+.ins{font-style:italic;font-size:14px;margin:4px 0 10px}
+.q{margin-bottom:14px;break-inside:avoid}
+.q b.t{display:block;margin-bottom:6px}
+.opts{display:flex;justify-content:space-around;gap:8px}
+.o{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;flex:1}
+.bub{width:20px;height:20px;border:2px solid #333;border-radius:50%}
+.o.sel .bub{background:#000}
+.pic{width:100%;max-width:170px;height:84px;border:1px solid #bbb;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:42px;line-height:1}
+.pic small{font:12px Arial,sans-serif;margin-top:4px}
+.tk{border:2px dashed #000;background:#fffbe6;font-family:Arial,sans-serif}
+.tk strong{font-size:30px}
+.tk small{font-size:11px}
+.o.ok .pic{outline:3px solid #2a8a3a}
+.o.bad .pic{outline:3px solid #c0392b}
+.play{font:bold 14px Arial,sans-serif;padding:6px 12px;border:1.5px solid #000;border-radius:6px;background:#eef3ff;cursor:pointer;margin:0 0 6px 8px}
+.rd{display:flex;border:1.5px solid #000}
+.rd>div{flex:1;padding:10px;font-size:14.5px}
+.rd>div:first-child{border-right:1.5px solid #000}
+.rd p{margin:0 0 14px}
+.rd select{font:inherit;width:48px;margin-left:4px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0;font-family:Arial,sans-serif}
+.ctl button{padding:9px 14px;font-size:14px;border:1.5px solid #000;border-radius:6px;background:#f4f4f4;cursor:pointer}
+#res{font:bold 18px Arial,sans-serif;margin:8px 0}
+#teacher{display:none;border-top:2px solid #000;margin-top:20px;padding-top:10px;page-break-before:always}
+#teacher.show{display:block}
+table{border-collapse:collapse;margin:6px 0 12px}
+td,th{border:1.5px solid #000;padding:5px 12px;text-align:left}
+.foot{text-align:center;font-size:12px;margin-top:14px;font-style:italic}
+@media print{.ctl,.play,#res{display:none}.o.ok .pic,.o.bad .pic{outline:none}.pic{border-color:#555}}
+@media(max-width:600px){.rd{flex-direction:column}.rd>div:first-child{border-right:0;border-bottom:1.5px solid #000}.pic{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div style="font-size:12px;font-weight:bold;border-left:3px solid #000;padding-left:6px">Sultanate of Oman<br>Ministry of Education</div>
+  <div class="t"><h2>Short Test 1 (C)</h2><h3>Listening &amp; Reading</h3><h3>Grade 7 (2026-2027)</h3><p>Created by: T. Badria Alfalahi</p></div>
+  <div class="sc"><div></div><div>10</div></div>
+</div>
+<div class="bar"><span>Name</span><span class="n">--------------------------------------------</span><span>Class</span><span>7/......</span></div>
+
+<div class="sec"><span>LISTENING (Items 1-5)</span><span>(5 marks)</span></div>
+<div class="ins">You are going to hear five people speaking about <b><i>entertainment</i></b>. Listen, and for each question, shade in the bubble ◯ next to the correct answer.
+<button class="play" onclick="playAll()">▶ Play all</button><button class="play" onclick="stopAudio()">■ Stop</button></div>
+<div id="L"></div>
+
+<div class="sec" style="margin-top:22px"><span>READING 1 (Items 1-5)</span><span>(5 marks)</span></div>
+<div class="ins">Match the five texts on the left with the texts in the box. (There is <b>one extra</b> text in the box.)</div>
+<div class="rd">
+ <div id="R"></div>
+ <div>
+  <p><b>A.</b> They are going to the bowling alley to play a game with their cousins.</p>
+  <p><b>B.</b> He is going to the cinema tonight. He is excited to watch the new film on the big screen.</p>
+  <p><b>C.</b> She is visiting the national museum on Sunday to see ancient objects and old coins.</p>
+  <p><b>D.</b> They are going to the water park tomorrow. They want to try the fast slides.</p>
+  <p><b>E.</b> He bought a ticket for a live show in Muscat. He cannot wait to hear the singer.</p>
+  <p><b>F.</b> She and her friends are going to the circus on Friday to see the acrobats.</p>
+ </div>
+</div>
+
+<div class="ctl">
+ <button onclick="check()">✔ Check answers</button>
+ <button onclick="resetAll()">↺ Reset</button>
+ <button onclick="window.print()">🖨 Print</button>
+ <button onclick="document.getElementById('teacher').classList.toggle('show')">👩‍🏫 Teacher copy</button>
+</div>
+<div id="res"></div>
+
+<div id="teacher">
+ <h2>Listening Script (Teacher Copy)</h2>
+ <p><i>Read each text twice, slowly, with a short pause between items.</i></p>
+ <div id="S"></div>
+ <h2>Answer Key</h2>
+ <table><tr><th>Listening</th><th>Answer</th><th>Picture</th></tr>
+ <tr><td>1</td><td>C</td><td>Magician</td></tr><tr><td>2</td><td>B</td><td>Cinema</td></tr>
+ <tr><td>3</td><td>A</td><td>Costume designer</td></tr><tr><td>4</td><td>C</td><td>4 OMR</td></tr>
+ <tr><td>5</td><td>A</td><td>Face painter</td></tr></table>
+ <p><b>Reading:</b> 1. B &nbsp; 2. F &nbsp; 3. D &nbsp; 4. E &nbsp; 5. C &nbsp; <i>(Extra: A)</i></p>
+</div>
+<div class="foot">Created by T. Badria Alfalahi</div>
+
+<script>
+const tk=(n,c)=>({tk:1,n});
+const LQ=[
+ {q:"What does Yusuf want to be when he grows up?",o:[["🎬","director"],["🎸","guitarist"],["🎩","magician"]],a:2,
+  s:"Hi, I'm Yusuf. I love tricks and surprises. I don't want to direct films and I don't want to play the guitar. When I grow up, I want to be a magician. I am learning to make coins disappear, and one day I want to perform on a big stage."},
+ {q:"Where did Sara go last Thursday?",o:[["🏊","water park"],["🍿","cinema"],["🎳","bowling alley"]],a:1,
+  s:"My name is Sara. Last Thursday, my family wanted to go to the water park, but it was closed for cleaning. So we went to the cinema instead. We watched a funny film and ate popcorn. I laughed a lot."},
+ {q:"What is Hilal's sister's job?",o:[["🧵","costume designer"],["🎭","actress"],["📷","photographer"]],a:0,
+  s:"I am Hilal. My sister works at a theatre. She doesn't act on the stage, and she doesn't take photos. She designs and sews colourful clothes for the actors. I am very proud of her."},
+ {q:"How much does the ticket for a child cost?",o:[["T",3],["T",7],["T",4]],a:2,
+  s:"Hello, I'm Reem. My teacher told us some great news today. On Saturday, our class is going on a trip to the circus. The ticket costs 7 rials for an adult, but it is only 4 rials for each child."},
+ {q:"Who did Aisha see at the shopping festival?",o:[["🖌️","face painter"],["🎤","singer"],["🎻","violinist"]],a:0,
+  s:"I'm Aisha. Yesterday, I went to the shopping festival with my cousins. There was a kind lady with brushes and bright paints. She didn't sing and she didn't play music. She painted tigers and butterflies on the children's faces. We all smiled."}
+];
+const RQ=["Mazin loves big screens and popcorn. He wants to watch a new action film tonight. _____",
+"Lina enjoys clowns, jugglers and acrobats. She likes shows under a big tent. _____",
+"Hamad loves swimming and sliding with his friends. He is looking for a fun wet place for the weekend. _____",
+"Zaid loves music and singing. He wants to see his favourite singer on a stage. _____",
+"Amal is interested in history. She wants to visit a place with old pots, coins and tools. _____"];
+const RA=["B","F","D","E","C"];
+const L=document.getElementById("L"),R=document.getElementById("R"),S=document.getElementById("S");
+const letters="ABC";
+LQ.forEach((x,i)=>{
+ const d=document.createElement("div");d.className="q";d.id="q"+i;
+ d.innerHTML=`<b class="t">${i+1}. ${x.q} <button class="play" onclick="say(${i})">▶ Play</button></b><div class="opts">`+
+ x.o.map((p,j)=>`<div class="o" data-j="${j}" onclick="pick(${i},${j})"><span class="bub"></span>`+
+ (p[0]==="T"?`<div class="pic tk"><small>Circus Ticket</small><strong>${p[1]} OMR</strong><small>Child</small></div>`:`<div class="pic">${p[0]}<small>${p[1]}</small></div>`)+`</div>`).join("")+`</div>`;
+ L.appendChild(d);
+ S.innerHTML+=`<p><b>${i+1}.</b> ${x.s}</p>`;
+});
+RQ.forEach((t,i)=>{
+ const p=document.createElement("p");
+ p.innerHTML=`<b>${i+1}.</b> ${t.replace("_____",`<select id="r${i}"><option value=""></option>${"ABCDEF".split("").map(c=>`<option>${c}</option>`).join("")}</select>`)}`;
+ R.appendChild(p);
+});
+const ans=[];
+function pick(i,j){ans[i]=j;document.querySelectorAll("#q"+i+" .o").forEach((e,k)=>e.classList.toggle("sel",k===j));}
+let voice=null;
+function getVoice(){const v=speechSynthesis.getVoices();voice=v.find(x=>/en-GB/i.test(x.lang))||v.find(x=>/^en/i.test(x.lang))||null;}
+if("speechSynthesis" in window){getVoice();speechSynthesis.onvoiceschanged=getVoice;}
+function speak(t,cb){
+ if(!("speechSynthesis" in window)){alert("Audio is not supported in this browser. Please read the teacher script aloud.");return;}
+ const u=new SpeechSynthesisUtterance(t);u.lang="en-GB";u.rate=0.85;if(voice)u.voice=voice;u.onend=cb||null;speechSynthesis.speak(u);
+}
+let stop=false;
+function say(i,cb){
+ speechSynthesis.cancel();stop=false;
+ speak(LQ[i].s,()=>setTimeout(()=>{if(stop)return;speak(LQ[i].s,cb);},2500));
+}
+function playAll(){
+ stop=false;let i=0;
+ const next=()=>{if(stop||i>=LQ.length)return;const k=i++;speechSynthesis.cancel();speak("Number "+(k+1)+".",()=>{
+  speak(LQ[k].s,()=>setTimeout(()=>{if(stop)return;speak(LQ[k].s,()=>setTimeout(next,4000));},2500));});};
+ next();
+}
+function stopAudio(){stop=true;speechSynthesis.cancel();}
+function check(){
+ let s=0;
+ LQ.forEach((x,i)=>{document.querySelectorAll("#q"+i+" .o").forEach((e,k)=>{e.classList.remove("ok","bad");
+  if(k===x.a)e.classList.add("ok");else if(k===ans[i])e.classList.add("bad");});
+  if(ans[i]===x.a)s++;});
+ RA.forEach((a,i)=>{const e=document.getElementById("r"+i);const ok=e.value===a;if(ok)s++;e.style.background=ok?"#d9f2dd":"#f8d7d3";});
+ document.getElementById("res").textContent="Score: "+s+" / 10";
+}
+function resetAll(){
+ stopAudio();ans.length=0;
+ document.querySelectorAll(".o").forEach(e=>e.classList.remove("sel","ok","bad"));
+ document.querySelectorAll("select").forEach(e=>{e.value="";e.style.background="";});
+ document.getElementById("res").textContent="";
+}
+</script>
+</body>
+</html>
